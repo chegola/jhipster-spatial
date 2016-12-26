@@ -18,14 +18,22 @@
         </dd>
     </dl>
 
+    <ng-map zoom="15" center="{{vm.shop.location.coordinates[0]}}, {{vm.shop.location.coordinates[1]}}">
+        <marker position="{{vm.shop.location.coordinates[0]}}, {{vm.shop.location.coordinates[1]}}"
+                markers=color:red>
+        </marker>
+    </ng-map>
+
     <button type="submit"
             ui-sref="{{ vm.previousState }}"
             class="btn btn-info">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
     </button>
 
+
     <button type="button" ui-sref="shop-detail.edit({id:vm.shop.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
         <span class="hidden-xs hidden-sm"> Edit</span>
     </button>
+
 </div>

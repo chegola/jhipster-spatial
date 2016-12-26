@@ -23,7 +23,7 @@ public class Shop implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "location")
+    @Column(name = "location", columnDefinition = "Geometry(Point,4326)")
     private Point location;
 
 

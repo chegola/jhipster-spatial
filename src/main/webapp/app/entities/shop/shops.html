@@ -56,5 +56,18 @@
                 </tr>
             </tbody>
         </table>
+
     </div>
+
+    <div>
+        <ng-map zoom="5" >
+            <div ng-repeat="shop in vm.shops track by shop.id">
+                <marker position="{{shop.location.coordinates[0]}}, {{shop.location.coordinates[1]}}"
+                        markers=color:red>
+                </marker>
+            </div>
+
+        </ng-map>
+    </div>
+
 </div>
