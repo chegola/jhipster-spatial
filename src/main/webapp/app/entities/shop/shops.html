@@ -60,7 +60,7 @@
     </div>
 
     <div>
-        <ng-map zoom="5" >
+        <ng-map zoom="11" center="[13.7248946,100.4930257]">
             <div ng-repeat="shop in vm.shops track by shop.id">
                 <marker position="{{shop.location.coordinates[0]}}, {{shop.location.coordinates[1]}}"
                         markers=color:red>
@@ -68,6 +68,7 @@
             </div>
 
         </ng-map>
+
     </div>
 
 </div>

@@ -156,7 +156,24 @@
                     $state.go('^');
                 });
             }]
-        });
+        })
+        .state('shop.current-position', {
+            parent: 'shop',
+            url: '/current-position',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/entities/shop/current-position.html',
+                    controller: 'ShopController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+            }
+        })
+        ;
     }
 
 })();
