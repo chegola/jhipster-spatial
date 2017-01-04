@@ -24,7 +24,7 @@ spring:
         username: aeyucjfqhzevte
         password: b25eab2638add27e542d385a02579fc509c75fb07f390577cca7681c23e3a52d
     jpa:
-        database-platform: com.jhipspatial.domain.util.FixedPostgreSQL82Dialect
+        database-platform: com.jhipspatial.domain.util.FixedPostGisDialect
         database: POSTGRESQL
         show-sql: false
         hibernate:

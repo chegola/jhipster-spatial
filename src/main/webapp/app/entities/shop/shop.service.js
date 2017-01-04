@@ -20,7 +20,8 @@
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': { method:'PUT' },
+            'findNearBy' : {method: 'GET', isArray: true, url: 'api/shops/findNearBy'}
         });
     }
 })();

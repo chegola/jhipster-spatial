@@ -171,6 +171,24 @@
             resolve: {
             }
         })
+        .state('shop.findNearBy', {
+            parent: 'shop',
+            url: '/findNearBy?lat&lon',
+            data: {
+                    authorities: ['ROLE_USER'],
+                    pageTitle: 'Shops'
+                  },
+                  views: {
+                    'content@': {
+                        templateUrl: 'app/entities/shop/shops.html',
+                        controller: 'ShopController',
+                        controllerAs: 'vm'
+                      }
+                  },
+                  resolve: {
+
+                  }
+                })
         ;
     }
 

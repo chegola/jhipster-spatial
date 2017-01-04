@@ -151,4 +151,16 @@ public class ShopResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("shop", id.toString())).build();
     }
 
+    /**
+     * GET  /shops/findNearBy : get all the shops.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of shops in body
+     */
+    @GetMapping("/shops/findNearBy")
+    @Timed
+    public List<Shop> getAllShopsNearBy(@PathVariable("lat") Double lat, @PathVariable("lon") Double lon) {
+        log.debug("REST request to get all Shops near by");
+        List<Shop> shops = shopRepository.findNearBy(lat, lon);
+        return shops;
+    }
 }
