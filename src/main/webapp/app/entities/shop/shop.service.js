@@ -21,7 +21,7 @@
                 }
             },
             'update': { method:'PUT' },
-            'findNearBy' : {method: 'GET', isArray: true, url: 'api/shops/findNearBy'}
+            'findNearBy' : {method: 'GET', isArray: true, url: 'api/shops/findNearBy/:lat'}
         });
     }
 })();

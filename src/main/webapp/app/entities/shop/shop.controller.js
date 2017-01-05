@@ -23,8 +23,8 @@
         function loadByFindNearBy() {
             console.info ("loadByFindNearBy()")
             Shop.findNearBy({
-                lat: 13.8977156,
-                lon: 100.375209
+                lat: "13.8977156D",
+                lon: "100.375209D"
             }, onSuccess, onError);
             function onSuccess(data, headers) {
                 vm.shops = data;
