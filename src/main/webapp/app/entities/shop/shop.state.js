@@ -173,7 +173,7 @@
         })
         .state('shop.findNearBy', {
             parent: 'shop',
-            url: '/findNearBy/{lat}',
+            url: '/findNearBy?lat&lon',
             data: {
                     authorities: ['ROLE_USER'],
                     pageTitle: 'Shops'

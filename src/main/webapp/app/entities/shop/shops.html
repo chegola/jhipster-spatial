@@ -12,10 +12,10 @@
                 </button>
             </div>
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="shop.findNearBy" >
-                    <span class="glyphicon glyphicon-search"></span>
+                <button class="btn btn-danger" ui-sref="shop" >
+                    <span class="glyphicon glyphicon-remove"></span>
                     <span >
-                        Find Shop near by KM
+                        Clear search result
                     </span>
                 </button>
             </div>
@@ -61,7 +61,8 @@
                                 <span class="hidden-xs hidden-sm"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="shop.findNearBy({id:shop.location})"
+                                    ui-sref="shop.findNearBy({lat:shop.location.coordinates[0],
+                                                              lon:shop.location.coordinates[1]})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-search"></span>
                                 <span class="hidden-xs hidden-sm"></span>

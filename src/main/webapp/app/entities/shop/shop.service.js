@@ -13,6 +13,7 @@
             'query': { method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
+                cache: true,
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
@@ -21,7 +22,9 @@
                 }
             },
             'update': { method:'PUT' },
-            'findNearBy' : {method: 'GET', isArray: true, url: 'api/shops/findNearBy/:lat'}
+            'findNearBy' : {method: 'GET', isArray: true,
+                            cache: true,
+                            url: 'api/shops/findNearBy'}
         });
     }
 })();

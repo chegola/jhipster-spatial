@@ -5,9 +5,9 @@
         .module('jhipSpatialApp')
         .controller('ShopController', ShopController);
 
-    ShopController.$inject = ['$scope', '$state', 'Shop'];
+    ShopController.$inject = ['$scope', '$state', '$stateParams','Shop'];
 
-    function ShopController ($scope, $state, Shop) {
+    function ShopController ($scope, $state, $stateParams, Shop) {
         var vm = this;
 
         vm.shops = [];
@@ -22,9 +22,10 @@
 
         function loadByFindNearBy() {
             console.info ("loadByFindNearBy()")
+            console.info ("lat:" + $stateParams.lat + ",lon:" + $stateParams.lon)
             Shop.findNearBy({
-                lat: "13.8977156D",
-                lon: "100.375209D"
+                lat: new Number($stateParams.lat),
+                lon: new Number($stateParams.lon)
             }, onSuccess, onError);
             function onSuccess(data, headers) {
                 vm.shops = data;

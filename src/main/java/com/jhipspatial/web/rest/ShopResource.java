@@ -152,15 +152,17 @@ public class ShopResource {
     }
 
     /**
-     * GET  /shops/findNearBy : get all the shops.
+     * GET  /shops/findNearBy : get all the shops near by.
      *
      * @return the ResponseEntity with status 200 (OK) and the list of shops in body
      */
-    @GetMapping("/shops/findNearBy/{lat}")
+    @GetMapping("/shops/findNearBy")
     @Timed
-    public List<Shop> getAllShopsNearBy(@PathVariable Double lat/*, @PathVariable Double lon*/) {
-        log.debug("REST request to get all Shops near by");
-        final Geometry geometry = wktToGeometry("POINT(13.8977156 100.375209)");
+    public List<Shop> getAllShopsNearBy(
+            @RequestParam(value = "lat", defaultValue = "0.0", required = true) Double lat,
+            @RequestParam(value = "lon", defaultValue = "0.0", required = true) Double lon) {
+        log.debug("REST request to get all Shops near by lat:" + lat +",lon:" + lon.toString());
+        final Geometry geometry = wktToGeometry("POINT(" + lat.toString() + " " + lon.toString() + ")");
         if (!geometry.getGeometryType().equals("Point")) {
             throw new RuntimeException("Geometry must be a point. Got a " + geometry.getGeometryType());
         }

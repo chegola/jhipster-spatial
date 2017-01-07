@@ -16,7 +16,7 @@ import java.util.List;
 public interface ShopRepository extends JpaRepository<Shop,Long> {
 
     @Query(value = "select s from Shop s where dwithin(s.location, ?1, 10000, false) = true")
-    List<Shop> findNearBy(Geometry lat/*, Double lon*/);
+    List<Shop> findNearBy(Geometry geometry);
 
 
 }
