@@ -9,8 +9,9 @@
                 </thead>
                 <tbody>
                 <tr ng-repeat="shop in vm.geom track by shop.id"
-                    ng-mouseover="vm.do_mouseover(shop.key)"
-                    ng-mouseleave="vm.do_mouseleave(shop.key)">
+                    ng-mouseover="vm.do_mouseover($index)"
+                    ng-mouseleave="vm.do_mouseleave($index)"
+                    >
                     <td>{{shop.name}}</td>
                 </tr>
                 </tbody>
