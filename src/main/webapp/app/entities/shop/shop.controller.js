@@ -16,14 +16,14 @@
         vm.do_mouseover = do_mouseover;
         vm.do_mouseleave = do_mouseleave;
 
-        function do_mouseleave(key) {
-            console.debug("Enter ng-mouseleave: " + key);
-            vm.geom[key].animation = "Animation.STOP";
+        function do_mouseleave(index) {
+            console.debug("Enter ng-mouseleave: " + index);
+            vm.geom[index].animation = "Animation.STOP";
         }
 
-        function do_mouseover(key) {
-            console.debug("Enter ng-mouseover:" + key);
-            vm.geom[key].animation = "Animation.BOUNCE";
+        function do_mouseover(index) {
+            console.debug("Enter ng-mouseover:" + index);
+            vm.geom[index].animation = "Animation.BOUNCE";
         }
 
         if ($state.current.name === 'shop.findNearBy') {
@@ -61,7 +61,6 @@
             for(var i=0; i < arrayLength; i++) {
                 var obj = new Object();
                 var shop = vm.shops[i];
-                obj.key = i;
                 obj.id = shop.id;
                 obj.name = shop.name;
                 obj.lat = shop.location.coordinates[0];
