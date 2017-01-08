@@ -1,3 +1,34 @@
-<ng-map zoom="11" center="[0, 0]">
-    <marker position="current" animation="Animation.BOUNCE" centered="true"></marker>
-</ng-map>
+<div class="row">
+    <div class="col-xs-4">
+        <div class="table-responsive">
+            <table class="jh-table table table-striped">
+                <thead>
+                <tr>
+                    <th><span>Name</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="shop in vm.geom track by shop.id"
+                    ng-mouseover="vm.do_mouseover(shop.key)"
+                    ng-mouseleave="vm.do_mouseleave(shop.key)">
+                    <td>{{shop.name}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+    <div class="col-xs-8">
+        <ng-map zoom="11" center="[13.7248946,100.4930257]" style="height:600px;">
+            <div ng-repeat="shop in vm.geom">
+                <marker position="{{shop.lat}}, {{shop.lon}}"
+                        markers=color:red animation="{{shop.animation}}" >
+                </marker>
+            </div>
+
+        </ng-map>
+
+
+    </div>
+</div>
