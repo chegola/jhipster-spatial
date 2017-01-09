@@ -1,3 +1,9 @@
+<style>
+.hover {
+    color:black;
+    font-weight:bold;
+}
+</style>
 <div class="row">
     <div class="col-xs-4">
         <div class="table-responsive">
@@ -9,6 +15,7 @@
                 </thead>
                 <tbody>
                 <tr ng-repeat="shop in vm.geom track by shop.id"
+                    ng-class="{'hover':$index == vm.hoverRow}"
                     ng-mouseover="vm.do_mouseover($index)"
                     ng-mouseleave="vm.do_mouseleave($index)"
                     >

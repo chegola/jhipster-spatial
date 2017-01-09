@@ -160,8 +160,9 @@ public class ShopResource {
     @Timed
     public List<Shop> getAllShopsNearBy(
             @RequestParam(value = "lat", defaultValue = "0.0", required = true) Double lat,
-            @RequestParam(value = "lon", defaultValue = "0.0", required = true) Double lon) {
-        log.debug("REST request to get all Shops near by lat:" + lat +",lon:" + lon.toString());
+            @RequestParam(value = "lon", defaultValue = "0.0", required = true) Double lon,
+            @RequestParam(value = "km", defaultValue = "1", required = true) Double km) {
+        log.debug("REST request to get all Shops near by lat:" + lat +",lon:" + lon.toString() + ",km:" + km.toString());
         final Geometry geometry = wktToGeometry("POINT(" + lat.toString() + " " + lon.toString() + ")");
         if (!geometry.getGeometryType().equals("Point")) {
             throw new RuntimeException("Geometry must be a point. Got a " + geometry.getGeometryType());
@@ -169,7 +170,7 @@ public class ShopResource {
         final Point newPoint = geometryFactory.createPoint(new Coordinate(geometry.getCoordinate()));
         newPoint.setSRID(SRID);
 
-        List<Shop> shops = shopRepository.findNearBy(newPoint);
+        List<Shop> shops = shopRepository.findNearBy(newPoint, km);
         return shops;
     }
 }
