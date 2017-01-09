@@ -14,6 +14,7 @@
         vm.geom = [];
         vm.do_mouseover = do_mouseover;
         vm.do_mouseleave = do_mouseleave;
+        vm.hoverRow = null;
 
         if (vm.km == null) {
             vm.km = 1;
@@ -27,6 +28,7 @@
         function do_mouseover(index) {
             console.debug("Enter ng-mouseover:" + index);
             vm.geom[index].animation = "Animation.BOUNCE";
+            vm.hoverRow = index;
         }
 
         if ($state.current.name === 'shop.findNearBy') {
