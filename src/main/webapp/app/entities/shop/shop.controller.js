@@ -5,16 +5,25 @@
         .module('jhipSpatialApp')
         .controller('ShopController', ShopController);
 
-    ShopController.$inject = ['$scope', '$state', '$stateParams','Shop'];
+    ShopController.$inject = ['$scope', '$state', '$stateParams','Shop', 'NgMap'];
 
-    function ShopController ($scope, $state, $stateParams, Shop) {
+    function ShopController ($scope, $state, $stateParams, Shop, NgMap) {
         var vm = this;
-
         vm.shops = [];
         vm.geom = [];
         vm.do_mouseover = do_mouseover;
         vm.do_mouseleave = do_mouseleave;
         vm.hoverRow = null;
+        NgMap.getMap().then(function(map) {
+            vm.map = map;
+        });
+        vm.shop = null;
+        vm.showInfo = showInfo;
+
+        function showInfo(evt, index) {
+            vm.shop = vm.geom[index];
+            vm.map.showInfoWindow('foo', this);
+        }
 
         if (vm.km == null) {
             vm.km = 1;
@@ -29,6 +38,7 @@
             console.debug("Enter ng-mouseover:" + index);
             vm.geom[index].animation = "Animation.BOUNCE";
             vm.hoverRow = index;
+            //setIndex(null, index);
         }
 
         if ($state.current.name === 'shop.findNearBy') {
