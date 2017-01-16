@@ -16,8 +16,8 @@
                 <tbody>
                 <tr ng-repeat="shop in vm.geom track by shop.id"
                     ng-class="{'hover':$index == vm.hoverRow}"
-                    ng-mouseover="vm.do_mouseover($index)"
-                    ng-mouseleave="vm.do_mouseleave($index)"
+                    ng-mouseover="vm.do_mouseover(event, $index)"
+                    ng-mouseleave="vm.do_mouseleave(event, $index)"
                     >
                     <td>{{shop.name}}</td>
                 </tr>
@@ -38,7 +38,6 @@
                 <div ng-non-bindable="">
                     <div id="bodyContent">
                         {{vm.shop.name}}
-
                     </div>
                 </div>
             </info-window>
@@ -46,7 +45,8 @@
             <div ng-repeat="shop in vm.geom">
                 <marker id="{{$index}}" position="{{shop.lat}}, {{shop.lon}}"
                         markers=color:red animation="{{shop.animation}}"
-                        on-mouseover="vm.showInfo(event, $index)">
+                        on-mouseover="vm.showInfo(event, $index)"
+                >
                 </marker>
 
             </div>

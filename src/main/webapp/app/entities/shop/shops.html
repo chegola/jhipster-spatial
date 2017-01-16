@@ -14,16 +14,17 @@
         <div class="row">
             <div class="col-xs-4">
                 <div class="input-group">
-                    <span class="input-group-addon">Near by Km</span>
+
+                        <span class="input-group-addon">Nearby Km</span>
+
                     <input class="form-control" id="km" name="km" placeholder="1" ng-model="vm.km">
                 </div>
             </div>
             <div class="col-xs-8 no-padding-left">
                 <button class="btn btn-danger" ui-sref="shop" >
                     <span class="glyphicon glyphicon-remove"></span>
-                    <span >
-                        Clear search result
-                    </span>
+                    <span class="hidden-xs hidden-sm">Clear search result</span>
+
                 </button>
             </div>
 
@@ -73,10 +74,7 @@
                                                               km:vm.km})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-search"></span>
-                                <span>
-                                    Near by
-                                </span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-xs hidden-sm"> Nearby</span>
                             </button>
 
                         </div>

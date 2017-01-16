@@ -29,16 +29,15 @@
             vm.km = 1;
         }
 
-        function do_mouseleave(index) {
+        function do_mouseleave(evt, index) {
             console.debug("Enter ng-mouseleave: " + index);
             vm.geom[index].animation = "Animation.STOP";
         }
 
-        function do_mouseover(index) {
+        function do_mouseover(evt, index) {
             console.debug("Enter ng-mouseover:" + index);
             vm.geom[index].animation = "Animation.BOUNCE";
             vm.hoverRow = index;
-            //setIndex(null, index);
         }
 
         if ($state.current.name === 'shop.findNearBy') {
