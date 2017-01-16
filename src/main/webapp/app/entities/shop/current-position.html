@@ -1,13 +1,15 @@
 <style>
 .hover {
-    color:red;
+    color:black;
     font-weight:bold;
 }
 </style>
+
 <div class="row">
-    <div class="col-xs-4">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <div class="col-xs-6 col-lg-4">
         <div class="table-responsive">
-            <table class="jh-table table table-striped">
+            <table class="table table-hover">
                 <thead>
                 <tr>
                     <th><span>Name</span></th>
@@ -27,8 +29,10 @@
         </div>
 
     </div>
-    <div class="col-xs-8">
-        <ng-map zoom="11" center="[13.7248946,100.4930257]" style="height:600px;">
+    <div class="col-xs-12 col-sm-6 col-lg-8">
+        <div id="map-container" class="z-depth-1" style="height:600px">
+
+            <ng-map zoom="11" center="[13.7248946,100.4930257]" style="height:600px;">
             <!--<div ng-repeat="shop in vm.geom">
                 <marker position="{{shop.lat}}, {{shop.lon}}"
                         markers=color:red animation="{{shop.animation}}" >
@@ -54,6 +58,7 @@
 
         </ng-map>
 
+        </div>
 
     </div>
 </div>
