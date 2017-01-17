@@ -12,13 +12,16 @@
             parent: 'app',
             url: '/',
             data: {
-                authorities: []
+                // authorities: []
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/home/home.html',
-                    controller: 'HomeController',
+                    templateUrl: 'app/entities/shop/current-position.html',
+                    controller: 'ShopController',
                     controllerAs: 'vm'
+                    /*templateUrl: 'app/home/home.html',
+                    controller: 'HomeController',
+                    controllerAs: 'vm'*/
                 }
             }
         });

@@ -80,10 +80,10 @@
             }]
         })
         .state('shop.new', {
-            parent: 'shop',
+            parent: 'home',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                //authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -102,9 +102,9 @@
                         }
                     }
                 }).result.then(function() {
-                    $state.go('shop', null, { reload: 'shop' });
+                    $state.go('shop.current-position', null, { reload: 'shop.current-position' });
                 }, function() {
-                    $state.go('shop');
+                    $state.go('shop.current-position');
                 });
             }]
         })
@@ -161,7 +161,7 @@
             parent: 'shop',
             url: '/current-position',
             data: {
-                authorities: ['ROLE_USER']
+                //authorities: ['ROLE_USER']
             },
             views: {
                 'content@': {
@@ -177,8 +177,8 @@
             parent: 'shop',
             url: '/findNearBy?lat&lon&km',
             data: {
-                    authorities: ['ROLE_USER'],
-                    pageTitle: 'Shops'
+                    //authorities: ['ROLE_USER'],
+                    pageTitle: 'Find Shops Nearby'
                   },
                   views: {
                     'content@': {

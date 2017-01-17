@@ -4,21 +4,29 @@
     font-weight:bold;
 }
 </style>
-
+<br/>
 <div class="row">
-
     <div class="col-xs-6 col-lg-4">
         <div class="col-md-6">
-            <div class="input-group">
-                <span class="input-group-addon">Nearby Km</span>
-                <input class="form-control" id="km" name="km" placeholder="1" ng-model="vm.km">
+            <div class="col-md-8" no-padding-left>
+                <div class="input-group">
+                    <span class="input-group-addon">Nearby Km</span>
+                    <input class="form-control" id="km" name="km" placeholder="1" ng-model="vm.km">
+                </div>
+
+            </div>
+            <div class="col-md-4" no-padding-left>
+                <button class="btn btn-danger" ui-sref="shop.current-position" >
+                    <span><i class="fa fa-refresh"></i></span>
+
+                </button>
+
             </div>
 
         </div>
         <div class="col-md-6" align="right">
-            <button class="btn btn-danger" ui-sref="shop.current-position" >
-                <span class="glyphicon glyphicon-remove"></span>
-                <span><i class="fa fa-trash"></i></span>
+            <button class="btn btn-default" ui-sref="shop.new" >
+                <span><i class="fa fa-plus-circle"></i></span>
 
             </button>
 
