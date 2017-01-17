@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/shop',
             data: {
-                authorities: ['ROLE_USER'],
+                //authorities: ['ROLE_USER'],
                 pageTitle: 'Shops'
             },
             views: {
@@ -30,7 +30,7 @@
             parent: 'entity',
             url: '/shop/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+            //    authorities: ['ROLE_USER'],
                 pageTitle: 'Shop'
             },
             views: {
@@ -58,7 +58,7 @@
             parent: 'shop-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                //authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -112,7 +112,7 @@
             parent: 'shop',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                //authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -137,7 +137,7 @@
             parent: 'shop',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                //authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
