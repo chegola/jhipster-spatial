@@ -57,6 +57,7 @@
             function onSuccess(data, headers) {
                 vm.shops = data;
                 vm.km = $stateParams.km;
+                populateResult();
             }
             function onError (error) {
                 console.info(error.data.message);

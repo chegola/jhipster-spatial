@@ -182,7 +182,7 @@
                   },
                   views: {
                     'content@': {
-                        templateUrl: 'app/entities/shop/shops.html',
+                        templateUrl: 'app/entities/shop/current-position.html',
                         controller: 'ShopController',
                         controllerAs: 'vm'
                       }
