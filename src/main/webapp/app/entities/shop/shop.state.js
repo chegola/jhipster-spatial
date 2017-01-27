@@ -180,17 +180,33 @@
                     //authorities: ['ROLE_USER'],
                     pageTitle: 'Find Shops Nearby'
                   },
-                  views: {
+            views: {
+                'content@': {
+                   templateUrl: 'app/entities/shop/current-position.html',
+                   controller: 'ShopController',
+                   controllerAs: 'vm'
+                }
+            },
+            resolve: {
+
+            }
+        })
+        .state('shop.mapbox', {
+                parent: 'shop',
+                url: '/mapbox',
+                data: {
+                    //authorities: ['ROLE_USER']
+                },
+                views: {
                     'content@': {
-                        templateUrl: 'app/entities/shop/current-position.html',
+                        templateUrl: 'app/entities/shop/mapbox.html',
                         controller: 'ShopController',
                         controllerAs: 'vm'
-                      }
-                  },
-                  resolve: {
-
-                  }
-                })
+                    }
+                },
+                resolve: {
+                }
+        })
         ;
     }
 

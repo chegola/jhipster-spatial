@@ -55,34 +55,25 @@
 
     </div>
     <div class="col-xs-12 col-sm-12 col-lg-8">
+        <br/><br/><br/><br/>
         <div id="map-container" class="z-depth-1" style="height:600px">
-
             <ng-map zoom="11" center="[13.7248946,100.4930257]" style="height:600px;">
-            <!--<div ng-repeat="shop in vm.geom">
-                <marker position="{{shop.lat}}, {{shop.lon}}"
-                        markers=color:red animation="{{shop.animation}}" >
-                </marker>
-            </div>-->
-            <info-window id="foo" >
-                <div ng-non-bindable="">
-                    <div id="bodyContent">
-                        {{vm.shop.name}}
+                <info-window id="foo" >
+                    <div ng-non-bindable="">
+                        <div id="bodyContent">
+                            {{vm.shop.name}}
+                        </div>
                     </div>
+                </info-window>
+
+                <div ng-repeat="shop in vm.geom">
+                    <marker id="{{$index}}" position="{{shop.lat}}, {{shop.lon}}"
+                            markers=color:red animation="{{shop.animation}}"
+                            on-mouseover="vm.showInfo(event, $index)">
+                    </marker>
+
                 </div>
-            </info-window>
-
-            <div ng-repeat="shop in vm.geom">
-                <marker id="{{$index}}" position="{{shop.lat}}, {{shop.lon}}"
-                        markers=color:red animation="{{shop.animation}}"
-                        on-mouseover="vm.showInfo(event, $index)"
-                >
-                </marker>
-
-            </div>
-
-
-        </ng-map>
-
+            </ng-map>
         </div>
 
     </div>

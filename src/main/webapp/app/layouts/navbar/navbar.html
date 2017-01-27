@@ -1,8 +1,28 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-dark bg-primary navbar-fixed-top navbar-light bg-faded" role="navigation">
+    <!-- Collapse button-->
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
+        <i class="fa fa-bars"></i>
+    </button>
+
     <div class="container">
-        <a class="navbar-brand logo" href="#/" ng-click="vm.collapseNavbar()">
-            <img class="logo-img" src="content/images/logo-jhipster.png" alt="logo"/>
-            <span>JhipSpatial</span> <span class="navbar-version">v{{VERSION}}</span>
-        </a>
+        <!--Collapse content-->
+        <div class="collapse navbar-toggleable-xs" id="collapseEx2">
+            <!--Navbar Brand-->
+            <a class="navbar-brand logo" href="#/" ng-click="vm.collapseNavbar()">
+                <img class="logo-img" src="content/images/logo-jhipster.png" alt="logo"/>
+                <span>JhipSpatial</span> <span class="navbar-version">v{{VERSION}}</span>
+            </a>
+            <!--Links-->
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="home">Google Map<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="shop.mapbox">Mapbox</a>
+                </li>
+            </ul>
+
+        </div>
+
     </div>
 </nav>
