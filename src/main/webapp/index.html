@@ -6,7 +6,7 @@
     <title>JhipSpatial</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css content/css/vendor.css -->
     <!-- Font Awesome -->
@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="content/css/main.css">
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="bower_components/MDBootstrap/css/mdb.min.css">
+    <!-- mapbox -->
+    <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css'/>
     <!-- endbuild -->
 </head>
 <body ng-app="jhipSpatialApp" ng-strict-di>
@@ -85,6 +87,9 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="bower_components/MDBootstrap/js/mdb.min.js"></script>
+
+    <!-- mapbox -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
 
     <!-- endinject -->
     <!-- endbuild -->
