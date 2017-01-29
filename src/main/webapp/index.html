@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="bower_components/MDBootstrap/css/mdb.min.css">
     <!-- mapbox -->
     <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css'/>
+    <!-- leaflet -->
+    <!--<link rel="stylesheet" href="bower_components/leaflet-dist/leaflet.css"/>-->
     <!-- endbuild -->
 </head>
 <body ng-app="jhipSpatialApp" ng-strict-di>
@@ -31,6 +33,7 @@
     <![endif]-->
     <page-ribbon></page-ribbon>
     <div ui-view="navbar" ng-cloak></div>
+    <br/><br/>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-md-12"  ui-view="content">
@@ -91,6 +94,11 @@
     <!-- mapbox -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
 
+    <!-- angular leaflet -->
+    <!--
+    <script src='bower_components/leaflet-dist/leaflet.js'></script>
+    <script src='bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js'></script>
+-->
     <!-- endinject -->
     <!-- endbuild -->
 
