@@ -15,7 +15,8 @@
             'infinite-scroll',
             // jhipster-needle-angularjs-add-module JHipster will add new module here
             'angular-loading-bar',
-            'ngMap'
+            'ngMap',
+            'leaflet-directive'
         ])
         .run(run);
 

@@ -1,8 +1,10 @@
+<!--
 <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:95%; }
 </style>
 <div id='map'></div>
+
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2hlZ29sYSIsImEiOiJjaXh0Nm81Z28wMDFqMzNxaHVkbzhhNnl2In0.7_8FXcHUWUgnlDTn2gFDBA';
 var map = new mapboxgl.Map({
@@ -12,18 +14,85 @@ var map = new mapboxgl.Map({
     zoom: 11 // starting zoom
 });
 </script>
-<h1>sdfs</h1>
+-->
+
+<style>
+    .hover {
+        color:black;
+        font-weight:bold;
+    }
+    #map{ width: 100%; height: 480px; }
+</style>
 <br/>
-<br/>
-<br/>
-<br/><br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/><br/>
-<br/>
-<br/>
-<br/>
+<div class="row">
+    <div class="col-xs-12 col-lg-4">
+        <div class="col-xs-6">
+            <div class="input-group">
+                <span class="input-group-addon">Nearby Km</span>
+                <input class="form-control" id="km" name="km" placeholder="1" ng-model="vm.km">
+            </div>
+        </div>
+
+        <div class="col-xs-6" align="right">
+            <button class="btn btn-danger btn-sm" ui-sref="shop.current-position" >
+                <span><i class="fa fa-refresh"></i></span>
+            </button>
+            <button class="btn btn-default btn-sm" ui-sref="shop.new" >
+                <span><i class="fa fa-plus-circle"></i></span>
+            </button>
+        </div>
+
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th><span>Name</span></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="shop in vm.geom track by shop.id"
+                    ng-class="{'hover':$index == vm.hoverRow}"
+                    ng-mouseover="vm.do_mb_mouseover(event, $index)"
+                    ng-mouseleave="vm.do_mb_mouseleave(event, $index)"
+                >
+                    <td align="left">{{shop.name}}</td>
+                    <td align="right">
+                        <button type="submit"
+                                ui-sref="shop.findNearBy({lat:shop.lat,
+                                                              lon:shop.lon,
+                                                              km:vm.km})"
+                                class="btn btn-info btn-sm">
+                            <span><i class="fa fa-search"></i> </span>
+                        </button></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-lg-8">
+        <br/>
+        <leaflet  center="bkkCenter" markers="markers" width="100%" height="600px"></leaflet>
+      <!--<div id="map"></div>
+        <script>
+            // initialize the map
+            var map = L.map('map').setView([42.35, -71.08], 13);
+
+            // load a tile layer
+            L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
+            {
+                attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+                maxZoom: 17,
+                minZoom: 9
+            }).addTo(map);
+        </script>
+
+    </div>-->
+</div>
+
+
+
+
