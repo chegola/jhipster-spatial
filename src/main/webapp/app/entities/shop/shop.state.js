@@ -191,6 +191,24 @@
 
             }
         })
+        .state('shop.mbFindNearBy', {
+                    parent: 'shop',
+                    url: '/mbFindNearBy?lat&lon&km',
+                    data: {
+                            //authorities: ['ROLE_USER'],
+                            pageTitle: 'Find Shops Nearby'
+                          },
+                    views: {
+                        'content@': {
+                           templateUrl: 'app/entities/shop/mapbox.html',
+                           controller: 'ShopController',
+                           controllerAs: 'vm'
+                        }
+                    },
+                    resolve: {
+
+                    }
+                })
         .state('shop.mapbox', {
                 parent: 'shop',
                 url: '/mapbox',

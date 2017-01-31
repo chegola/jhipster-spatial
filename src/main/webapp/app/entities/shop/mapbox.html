@@ -34,7 +34,7 @@ var map = new mapboxgl.Map({
         </div>
 
         <div class="col-xs-6" align="right">
-            <button class="btn btn-danger btn-sm" ui-sref="shop.current-position" >
+            <button class="btn btn-danger btn-sm" ui-sref="shop.mapbox" >
                 <span><i class="fa fa-refresh"></i></span>
             </button>
             <button class="btn btn-default btn-sm" ui-sref="shop.new" >
@@ -60,7 +60,7 @@ var map = new mapboxgl.Map({
                     <td align="left">{{shop.name}}</td>
                     <td align="right">
                         <button type="submit"
-                                ui-sref="shop.findNearBy({lat:shop.lat,
+                                ui-sref="shop.mbFindNearBy({lat:shop.lat,
                                                               lon:shop.lon,
                                                               km:vm.km})"
                                 class="btn btn-info btn-sm">

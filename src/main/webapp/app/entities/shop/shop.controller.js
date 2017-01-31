@@ -49,7 +49,7 @@
             vm.km = 1;
         }
 
-        if ($state.current.name === 'shop.findNearBy') {
+        if ($state.current.name === 'shop.mbFindNearBy' || $state.current.name === 'shop.findNearBy') {
             loadByFindNearBy();
         }
         else {
